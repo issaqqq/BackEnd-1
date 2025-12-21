@@ -1,7 +1,7 @@
 {
   "name": "backend-1",
   "version": "1.0.0",
-  "description": "",
+  "description": "learning bakcend",
   "main": "index.js",
   "type": "module",
   "scripts": {
