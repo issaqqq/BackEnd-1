@@ -1,4 +1,4 @@
-learning bakcend
+learning BackEnd
 
 npm init -y
 npm install prisma --save-dev
