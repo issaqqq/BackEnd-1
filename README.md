@@ -10,4 +10,3 @@ nodemon server.js (to run) OR npm run server (to run)
 
 npx prisma
 npx prisma init
- start 
