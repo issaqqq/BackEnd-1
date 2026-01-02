@@ -1,5 +1,18 @@
 learning BackEnd
 
+
+
+{
+    npx prisma generate
+    npx prisma db pull
+    npx prisma migrate dev --name init
+
+}
+
+
+
+
+
 npm init -y
 npm install prisma --save-dev
 
@@ -15,3 +28,4 @@ npx prisma init
 
 npm i @prisma/client
 npx prisma migrate dev --name users_table
+
