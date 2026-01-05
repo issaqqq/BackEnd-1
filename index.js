@@ -26,7 +26,17 @@ var arr = [1,2,3,4,5];
 // })
 // console.log(findarr);
 
-var obj = {
-    name : "John",
-    age : 44
-}
+//object in JS
+// var obj = {
+//     name : "John",
+//     age : 44
+// }
+
+// this is a function
+// function greet(){
+//     return "Hello World";
+// }
+// var reply = greet();
+
+// line by line code chale isey kehte hai synchronous 
+//jo code async nature ka ho, usey side stack mein bhej do and agle code ko chaloa jo bhi sync nature ka ho, jab bhi saara sync code chal jaye, tab check karo ki async code complete hua ki nhi, agar wo complete hua ho toh usey main stack mein laao and chala do. isey kehte hai asynchronous
