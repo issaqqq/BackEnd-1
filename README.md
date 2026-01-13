@@ -1,1 +1,2 @@
-gonna start backend soon sonner
+npm init
+node index.js  (to run)
