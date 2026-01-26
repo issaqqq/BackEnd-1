@@ -1,14 +1,12 @@
-// const fs = require('fs');
+const express = require('express');
+const app = express();
 
-// fs.writeFile("hey.txt", "Hey there!",function(err){
-//     if(err) console.error(err)
-//     else console.log("done writing file")
-// })
+app.get('/', function (req, res) {
+    res.send('Hello world')
+})
 
-// fs.rename("hey.txt", "text.txt",function(err){
-//     if(err) console.error(err)
-//     else console.log("done writing file")
-// })
+app.get('/profile', function (req, res) {
+    res.send('Hello Issaq')
+})
 
-
-
+app.listen(3000)
