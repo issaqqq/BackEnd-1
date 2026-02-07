@@ -2,7 +2,7 @@
   "name": "backend-1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/issaqqq/BackEnd-1#readme",
   "dependencies": {
     "cookie-parser": "^1.4.7",
+    "ejs": "^4.0.1",
     "express": "^5.2.1"
   }
 }
