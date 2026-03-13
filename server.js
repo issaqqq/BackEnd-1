@@ -10,6 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
  
+// for first mini project
 app.get('/', function(req, res) {
     fs.readdir(`./files`, function(err, files){
         console.log(files);
@@ -51,14 +52,31 @@ app.get('/adduser', async (req,res) => {
 
 app.get('/update', async (req,res) => {
     let updateduser = await userModel.findOneAndUpdate({username: "harshhh"}, {name: "Harsh vandana"}, {new:true})
-
     res.send(updateduser);
 })
 
 app.get("/read", async (req, res)=> {
-    let users = await userModel.find({username: "harshhh"});
+    let users = await userModel.findOne({username: "harshhh"});
     res.send(users);
 })
+
+app.get("/delete", async (req, res)=> {
+    let users = await userModel.findOneAndDelete({username: "harshhh"});
+    res.send(users);
+})
+
+
+// for second mini project 
+app.get('/app', function(req, res) {
+    
+    res.render("newindex")
+})
+app.get('/app/read', function(req, res) {
+    
+    res.render("newread")
+})
+
+
 
 app.listen(3000, function() {
     console.log("server is running on port 3000");
