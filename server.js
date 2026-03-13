@@ -2,13 +2,14 @@ const express = require('express');
 const app = express();
 const path = require('path')
 const fs = require('fs');
+const userModel = require('./usermodel');
 
 app.use(express.json()); 
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
-
+ 
 app.get('/', function(req, res) {
     fs.readdir(`./files`, function(err, files){
         console.log(files);
@@ -37,6 +38,27 @@ app.post('/create', function(req, res) {
         res.redirect('/');
     });
 });
+
+app.get('/adduser', async (req,res) => {
+    let createuser = await userModel.create({
+        name: "harsh",
+        email: "harshita@gmail.com",
+        username: "harshhh" 
+    })
+    res.send(createuser);
+    console.log("Hey")
+})
+
+app.get('/update', async (req,res) => {
+    let updateduser = await userModel.findOneAndUpdate({username: "harshhh"}, {name: "Harsh vandana"}, {new:true})
+
+    res.send(updateduser);
+})
+
+app.get("/read", async (req, res)=> {
+    let users = await userModel.find({username: "harshhh"});
+    res.send(users);
+})
 
 app.listen(3000, function() {
     console.log("server is running on port 3000");

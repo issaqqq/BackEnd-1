@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
-mongoose.connect(`mongodb://127.0.01:27017/mongopractice`)
+mongoose.connect(`mongodb://127.0.0.1:27017/mongopractice`)
 
 const userSchema = mongoose.Schema({
     name: String,
-    emial: String,
+    email: String,
     username: String
 })
 
-mongoose.model("user", userSchema);
+module.exports = mongoose.model("user", userSchema);
