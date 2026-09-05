@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path')
 const fs = require('fs');
-const userModel = require('./usermodel');
+const userModel = require('./models/usermodel');
 
 app.use(express.json()); 
 app.use(express.urlencoded({extended: true}));
@@ -75,7 +75,17 @@ app.get('/app/read', function(req, res) {
     
     res.render("newread")
 })
+app.post('/app/create', async (req, res) => {
+    let {name, email, imageurl} = req.body
 
+    let createdUser = await userModel.create({
+        name: name,
+        email: email,
+        imageurl: imageurl
+    })
+
+    res.send(createdUser);
+})
 
 
 app.listen(3000, function() {
