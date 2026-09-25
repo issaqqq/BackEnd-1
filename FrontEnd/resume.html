@@ -3,15 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(189, 189, 169);
+            border: 7px solid blueviolet;
+        }
+        .box{
+            width: 350px;
+            height: 80px;
+            background-color: #000;
+            border: 3px solid rgb(248, 248, 0);
+            border-radius: 10px;
+            margin: 10px;
+            position: relative;
+            animation-name: RMove;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes RMove{
+            from{
+                top: 0;
+                left: 0;
+            }
+            to{
+                top: 0;
+                left: 1700px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <img src="logo.png" alt="logo" loading="lazy">
-    <audio controls>
-        <source src="audio.mp3" type="audio">
-    </audio>
-    <video controls>
-        <source src="video.mp4" type="mp4">
-    </video>
+    
+    <div class="container">
+        <div class="box">
+            
+        </div>
+
+    </div>
+
 </body>
 </html>
